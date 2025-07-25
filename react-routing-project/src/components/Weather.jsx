@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 
-const App = () => {
+const Weather = () => {
   const [searchCity, setSearchCity] = useState('');
   const [city, setCity] = useState('');
   const [weather, setWeather] = useState(null);
@@ -76,4 +76,4 @@ const App = () => {
   );
 };
 
-export default App;
+export default Weather;
