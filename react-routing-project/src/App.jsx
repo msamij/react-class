@@ -1,9 +1,12 @@
 import { Route, Routes } from 'react-router-dom';
-import About from './components/About';
-import Home from './components/Home';
+import About from './pages/About';
+import Home from './pages/Home';
 import Navbar from './components/Navbar';
-import ProductDetail from './components/ProductDetail';
-import Weather from './components/Weather';
+import ProductDetail from './pages/ProductDetail';
+import Weather from './pages/Weather';
+import ProductsList from './pages/ProductsList';
+import ProductNestedDetail from './pages/ProductNestedDetail';
+import ProductsLayout from './pages/ProductsLayout';
 
 function App() {
   return (
@@ -14,6 +17,11 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path="/weather" element={<Weather />} />
         <Route path="/product/:id" element={<ProductDetail />} />
+
+        <Route path="/products" element={<ProductsLayout />}>
+          <Route index element={<ProductsList />} />
+          <Route path=":id" element={<ProductNestedDetail />} />
+        </Route>
       </Routes>
     </div>
   );

@@ -12,6 +12,9 @@ const Navbar = () => {
       <Link to="/weather" className="hover:underline">
         Weather
       </Link>
+      <Link to="/products" className="hover:underline">
+        Products
+      </Link>
     </nav>
   );
 };
