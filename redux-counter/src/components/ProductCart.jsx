@@ -1,6 +1,14 @@
 import { Button, Card, CardContent, CardMedia, Typography } from '@mui/material';
+import { useDispatch } from 'react-redux';
+import { addToCart } from '../redux/cartSlice';
 
 const ProductCard = ({ product }) => {
+  const dispatch = useDispatch();
+
+  const handleAddToCart = () => {
+    dispatch(addToCart(product));
+  };
+
   return (
     <Card className="w-full max-w-sm shadow-md">
       <CardMedia component="img" height="160" image={product.image} alt={product.name} />
@@ -12,7 +20,7 @@ const ProductCard = ({ product }) => {
           {product.description}
         </Typography>
         <Typography className="mt-2 font-bold">${product.price}</Typography>
-        <Button variant="contained" size="small" className="mt-4">
+        <Button variant="contained" size="small" className="mt-4" onClick={handleAddToCart}>
           Add to Cart
         </Button>
       </CardContent>

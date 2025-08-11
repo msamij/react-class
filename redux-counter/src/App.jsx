@@ -1,3 +1,4 @@
+import Cart from './components/Cart';
 import Counter from './components/Counter';
 import ProductList from './components/ProductList';
 
@@ -7,6 +8,7 @@ function App() {
       <Counter />
       <h1 className="text-3xl font-bold text-center my-6">Product Listing</h1>
       <ProductList />
+      <Cart />
     </div>
   );
 }
